@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">fiapfood</string>
+    <string name="app_name">FIAP Food</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_add_restaurant">Add Restaurant</string>
+
+    <!-- restaurant-->
+    <string name="add_restaurant">Add Restaurant</string>
+    <string name="input_name_of_restaurant">Restaurant\'s name</string>
+    <string name="name">name</string>
+    <string name="pre_fill"></string>
+
+    <string name="hint_name">Name</string>
+
+    <!-- dialog-->
+    <string name="ok">Ok</string>ь
+    <string name="cancel">Cancel</string>
+
+    <!-- tittles-->
+    <string name="restaurants">Restaurants</string>
+
 </resources>

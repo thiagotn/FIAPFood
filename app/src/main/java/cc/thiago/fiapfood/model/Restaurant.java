@@ -21,6 +21,10 @@ public class Restaurant extends RealmObject {
 
     }
 
+    public Restaurant(String name) {
+        this.name = name;
+    }
+
     public String getId() {
         return id;
     }
