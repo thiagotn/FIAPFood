@@ -7,7 +7,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import cc.thiago.fiapfood.R;
 import cc.thiago.fiapfood.model.Restaurant;
@@ -92,17 +94,19 @@ public class RestaurantActivity extends BaseActivity implements View.OnClickList
         swipeToDismissTouchHelper.attachToRecyclerView(rvRestaurants);
     }
 
-    public void showUniversities(RealmResults<Restaurant> universities) {
-        this.restaurants = universities;
-        adapter = new RestaurantAdapter(universities);
+    public void showRestaurants(RealmResults<Restaurant> restaurants) {
+        this.restaurants = restaurants;
+        adapter = new RestaurantAdapter(restaurants);
         adapter.setOnItemClickListener(new RestaurantAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(String id) {
+                // TODO: Ir para Activity de Detalhes de Restaurante!
                 /*
-                Intent intent = new Intent(getApplicationContext(), StudentsActivity.class);
+                Intent intent = new Intent(getApplicationContext(), DetailsActivity.class);
                 intent.putExtra(RealmTable.ID, id);
                 startActivity(intent);
                 */
+                Log.i("[showRestaurants]", "Show Restaurants!");
             }
         });
         rvRestaurants.setAdapter(adapter);
@@ -113,9 +117,9 @@ public class RestaurantActivity extends BaseActivity implements View.OnClickList
         dialog.show(getSupportFragmentManager(), dialog.getClass().getName());
         dialog.setListener(new AddRestaurantDialog.OnAddRestaurantClickListener() {
             @Override
-            public void onAddRestaurantClickListener(String universityName) {
+            public void onAddRestaurantClickListener(String restaurantName) {
                 dialog.dismiss();
-                presenter.addRestaurant(universityName);
+                presenter.addRestaurant(restaurantName);
             }
         });
     }

@@ -57,8 +57,8 @@ public class RestaurantPresenter implements IRestaurantPresenter {
     public void subscribeCallbacks() {
         getAllRestaurantCallback = new IRestaurantRepository.OnGetAllRestaurantCallback() {
             @Override
-            public void onSuccess(RealmResults<Restaurant> universities) {
-                view.showUniversities(universities);
+            public void onSuccess(RealmResults<Restaurant> restaurants) {
+                view.showRestaurants(restaurants);
             }
 
             @Override
